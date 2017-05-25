@@ -1,19 +1,20 @@
-# README title
-This is a brief description of what the software does.
-### Setup/Installation Requirements
-* list item 1
-* list item 2
-* list item 3
-### Known Bugs
-List known bugs or issues here
-### Technologies Used
-* Tech 1
-* Tech 2
-* Tech 3
-### By Authors
-### Support and contact details
-_contact info here_
-### License
-_MIT_
-Copyright (c) _year_ **Author or Organization**
+# Google Maps API
+This is an exploration using the Google Maps API
 
+# Views
+**Pacific North West**  
+![](img/pnw.png)  
+
+**United States**
+![](img/usa.png)  
+
+**Paris, France**
+![](img/paris.png)
+
+### By Authors
+Ken Rutan and Sean Pierce
+
+### Support and contact details
+Please subbit an issue or comment on this project to contact the authors
+### License
+_MIT_ &copy; _2017_, **Epicodus**
