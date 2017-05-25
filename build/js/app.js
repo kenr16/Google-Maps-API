@@ -1,8 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-function initMap(new_spots) {
+function initMap(new_spots, zoom) {
   var last_spot = new_spots[new_spots.length-1];
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
+    zoom: zoom,
     center: last_spot.info
   });
 
@@ -20,7 +20,7 @@ function printLocations(new_spots) {
     $('#locations ul').append(`<a href="#" id="place${i}"><li>${location.query}</li></a>`);
     $(`#place${i}`).click(function() {
       // alert($(this).text());
-      initMap([location]);
+      initMap([location], 16);
     });
   });
 }
@@ -35,7 +35,7 @@ var new_spots = [{info:{lat: 45.52, lng: -122.68}, query:"Epicodus"}];
 
 $(document).ready(function() {
 
-  initMap(new_spots);
+  initMap(new_spots, 8);
 
   $('#user-input-form').submit(function(e) {
     e.preventDefault();
@@ -48,7 +48,7 @@ $(document).ready(function() {
         printLocations(new_spots);
       });
 
-      initMap(new_spots);
+      initMap(new_spots, 6);
     });
   });
 

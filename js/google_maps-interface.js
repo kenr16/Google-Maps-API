@@ -1,7 +1,7 @@
-function initMap(new_spots) {
+function initMap(new_spots, zoom) {
   var last_spot = new_spots[new_spots.length-1];
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
+    zoom: zoom,
     center: last_spot.info
   });
 
@@ -19,7 +19,7 @@ function printLocations(new_spots) {
     $('#locations ul').append(`<a href="#" id="place${i}"><li>${location.query}</li></a>`);
     $(`#place${i}`).click(function() {
       // alert($(this).text());
-      initMap([location]);
+      initMap([location], 16);
     });
   });
 }
@@ -34,7 +34,7 @@ var new_spots = [{info:{lat: 45.52, lng: -122.68}, query:"Epicodus"}];
 
 $(document).ready(function() {
 
-  initMap(new_spots);
+  initMap(new_spots, 8);
 
   $('#user-input-form').submit(function(e) {
     e.preventDefault();
@@ -47,7 +47,7 @@ $(document).ready(function() {
         printLocations(new_spots);
       });
 
-      initMap(new_spots);
+      initMap(new_spots, 6);
     });
   });
 
